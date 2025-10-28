@@ -1,0 +1,92 @@
+<div class="container mt-5">
+    <h2 class="text-center">Nuovo Contatto</h2>
+    <form class="mt-5" [formGroup]="addContactFrm">
+        <div class="row card text-bg-secondary mb-3">
+
+            <!-- NOME E COGNOME -->
+            <div class="row g-3">
+                <div class="col">
+                    <label for="formGroupExampleInput" class="form-label">Nome</label>
+                    <input type="text" class="form-control" placeholder="Nome" aria-label="Nome" formControlName="Nome">
+                </div>
+                <div class="col">
+                    <label for="formGroupExampleInput" class="form-label">Cognome</label>
+                    <input type="text" class="form-control" placeholder="Cognome" aria-label="Cognome"
+                        formControlName="Cognome">
+                </div>
+            </div>
+
+
+            <!-- TIPOLOGIA E RAGIONE SOCIALE -->
+            <div class="row g-3">
+                <div class="col">
+                    <label for="formGroupExampleInput" class="form-label">Tipologia</label>
+                    <input type="text" class="form-control" placeholder="Tipologia" aria-label="Tipologia"
+                        formControlName="Tipologia">
+                </div>
+                <div class="col">
+                    <label for="formGroupExampleInput" class="form-label">Ragione sociale</label>
+                    <input type="text" class="form-control" placeholder="Ragione sociale" aria-label="Ragione sociale"
+                        formControlName="RagioneSociale">
+                </div>
+            </div>
+
+
+            <!-- INDIRIZZO PROVINCIA CITTA NAZIONE -->
+            <div class="row g-3">
+                <div class="col-sm-7">
+                    <label for="formGroupExampleInput" class="form-label">Indirizzo</label>
+                    <input type="text" class="form-control" placeholder="Via" aria-label="Via"
+                        formControlName="Indirizzo">
+                </div>
+                <div class="col-sm">
+                    <label for="formGroupExampleInput" class="form-label">N° civico</label>
+                    <input type="text" class="form-control" placeholder="N° civico" aria-label="N° civico"
+                        formControlName="Ncivico">
+                </div>
+                <div class="col-sm">
+                    <label for="formGroupExampleInput" class="form-label">CAP</label>
+                    <input type="text" class="form-control" placeholder="CAP" aria-label="CAP" formControlName="CAP">
+                </div>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-sm">
+                    <label for="formGroupExampleInput" class="form-label">Città</label>
+                    <input type="text" class="form-control" placeholder="Città" aria-label="Città"
+                        formControlName="Citta">
+                </div>
+                <div class="col-sm">
+                    <label for="formGroupExampleInput" class="form-label">Provincia</label>
+                    <input type="text" class="form-control" placeholder="Provincia" aria-label="Provincia"
+                        formControlName="Provincia">
+                </div>
+                <div class="col-sm">
+                    <label for="formGroupExampleInput" class="form-label">Nazione</label>
+                    <input type="text" class="form-control" placeholder="Nazione" aria-label="Nazione"
+                        formControlName="Nazione">
+                </div>
+            </div>
+
+            <!-- Numero telefonico e Prefisso internazionale -->
+            <div class="row g-3">
+                <div class="col-sm">
+                    <label for="formGroupExampleInput" class="form-label">Numero telefonico</label>
+                    <input type="text" class="form-control" placeholder="Numero telefonico"
+                        aria-label="Numero telefonico" formControlName="Ntelefonico">
+                </div>
+                <div class="col-sm">
+                    <label for="formGroupExampleInput" class="form-label">Prefisso internazionale</label>
+                    <input type="text" class="form-control" placeholder="es. +39" aria-label="Prefisso internazionale"
+                        formControlName="PreInt">
+                </div>
+            </div>
+
+            <!-- BOTTONE CREA -->
+            <div class="col-12 text-center m-3">
+                <button type="submit" class="btn btn-primary" (click)="onSubmit()">CREA</button>
+            </div>
+
+        </div>
+    </form>
+</div>
