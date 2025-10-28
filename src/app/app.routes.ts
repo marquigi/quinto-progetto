@@ -5,11 +5,11 @@ import { ListContactsComponent } from './components/list-contacts.component/list
 export const routes: Routes = [
 
     {
-        path: "",
+        path: "addContact",
         component: AddContactsComponent
     },
     {
-        path: "list-contacts",
+        path: "",
         component: ListContactsComponent
     }
 
