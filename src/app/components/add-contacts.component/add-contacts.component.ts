@@ -31,6 +31,19 @@ export class AddContactsComponent implements OnInit {
       PreInt: new FormControl('', Validators.pattern(/^\+[0-9]{1,3}$/)),
       Compleanno: new FormControl('', Validators.pattern(/^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/))
     });
+
+
+    this.addContactFrm.get('RagioneSociale')?.disable();
+
+    this.addContactFrm.get('Tipologia')?.valueChanges.subscribe(val => {
+      const rs = this.addContactFrm.get('RagioneSociale');
+      if (val === '2') {
+        rs?.enable();
+      } else {
+        rs?.reset();
+        rs?.disable();
+      }
+    });
   }
 
   salvaContatto() {
