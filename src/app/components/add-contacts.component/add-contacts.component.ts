@@ -25,9 +25,9 @@ export class AddContactsComponent implements OnInit {
       CAP: new FormControl('', [Validators.pattern(/^[0-9]{5}$/)]),
       Citta: new FormControl('', [Validators.minLength(2), Validators.pattern(/^[A-Za-zÀ-ÖØ-öø-ÿ'\s]+$/)]),
       Provincia: new FormControl('', Validators.pattern(/^[A-Z]{2}$/)),
-      Email: new FormControl('', Validators.email),
+      Email: new FormControl('', [Validators.required, Validators.email]),
       Nazione: new FormControl(''),
-      Ntelefonico: new FormControl('', Validators.pattern(/^[0-9]{6,15}$/)),
+      Ntelefonico: new FormControl('', [Validators.required, Validators.pattern(/^[0-9]{6,15}$/)]),
       PreInt: new FormControl('', Validators.pattern(/^\+[0-9]{1,3}$/)),
       Compleanno: new FormControl('', Validators.pattern(/^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/))
     });
@@ -37,7 +37,7 @@ export class AddContactsComponent implements OnInit {
 
     this.addContactFrm.get('Tipologia')?.valueChanges.subscribe(val => {
       const rs = this.addContactFrm.get('RagioneSociale');
-      if (val === '2') {
+      if (val === 'Azienda') {
         rs?.enable();
       } else {
         rs?.reset();

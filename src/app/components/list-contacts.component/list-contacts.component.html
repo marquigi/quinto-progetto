@@ -1,26 +1,28 @@
 <div class="container mt-5">
-    <h2 class="text-center">Contatti</h2>
-
-    <!-- Aggiungere un @if se non ci sono contatti mostrare un messaggio se no mostra la tabella di contatti -->
-
+    @if (contactsList.length == 0) {
+    <h2 class="text-center">Non ci sono contatti</h2>
+    }@else {
+    @for (contatto of contactsList; track $index) {
     <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="card mb-3 card-fixed">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="..." class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ contatto.Nome }} {{ contatto.Cognome }}</h5>
 
-        @for (contatto of contactsList; track $index) {
-        <div class="col">
-            <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{ contatto.Nome }} {{ contatto.Cognome }}</h5>
-                    <p class="card-text">{{ contatto.Tipologia }} / {{ contatto.RagioneSociale }}</p>
-                    <p class="card-text">{{ contatto.Email }}</p>
-                    <button type="button" class="btn btn-primary me-2">Visualizza</button>
-                    <button type="button" class="btn btn-primary me-2">Modifica</button>
-                    <button type="button" class="btn btn-danger me">Cancella</button>
+                        <p class="card-text"><small class="text-body-secondary">{{ contatto.Tipologia }} {{
+                                contatto.RagioneSociale }}</small></p>
+                        <p class="card-text"><small class="text-body-secondary">{{ contatto.Email }}</small></p>
+                        <p class="card-text"><small class="text-body-secondary">{{ contatto.Ntelefonico }}</small></p>
+
+                    </div>
                 </div>
             </div>
         </div>
-        }
 
     </div>
-
+    }}
 </div>

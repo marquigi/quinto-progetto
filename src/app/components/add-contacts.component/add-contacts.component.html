@@ -32,8 +32,8 @@
                     <label for="Tipologia" class="form-label">Tipologia</label>
                     <select class="form-select" aria-label="Tipologia" id="Tipologia" formControlName="Tipologia">
                         <option selected>Seleziona tipologia</option>
-                        <option value="1">Privato</option>
-                        <option value="2">Azienda</option>
+                        <option value="Privato">Privato</option>
+                        <option value="Azienda">Azienda</option>
                     </select>
                 </div>
                 <div class="col">
@@ -95,6 +95,9 @@
                     <input type="text" class="form-control" placeholder="esempio@yahoo.com" aria-label="Email"
                         formControlName="Email" id="Email"
                         [class.is-invalid]="addContactFrm.get('Email')?.invalid && addContactFrm.get('Email')?.touched">
+                    @if(addContactFrm.get('Email')?.invalid && addContactFrm.get('Email')?.touched){
+                    <div class="text-danger">Campo obbligatorio o NON valido</div>
+                    }
                 </div>
                 <div class="col-sm-1">
                     <label for="PreInt" class="form-label">Prefisso</label>
@@ -107,6 +110,9 @@
                     <input type="text" class="form-control" placeholder="Numero telefonico"
                         aria-label="Numero telefonico" formControlName="Ntelefonico" id="Ntelefonico"
                         [class.is-invalid]="addContactFrm.get('Ntelefonico')?.invalid && addContactFrm.get('Ntelefonico')?.touched">
+                    @if(addContactFrm.get('Ntelefonico')?.invalid && addContactFrm.get('Ntelefonico')?.touched){
+                    <div class="text-danger">Campo obbligatorio o NON valido</div>
+                    }
                 </div>
                 <div class="col-sm-3">
                     <label for="Compleanno" class="form-label">Data di nascita</label>
