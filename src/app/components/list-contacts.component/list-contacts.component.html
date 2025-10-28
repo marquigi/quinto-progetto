@@ -4,10 +4,10 @@
     }@else {
     @for (contatto of contactsList; track $index) {
     <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="card mb-3 card-fixed">
+        <div class="card mb-3 card-fixed" style="border: 1px solid black;">
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="..." class="img-fluid rounded-start" alt="...">
+                    <img src="..." class="img-fluid rounded-start" alt="..." style="border: 1px solid black;">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -21,6 +21,13 @@
                     </div>
                 </div>
             </div>
+
+            <div class="card-body">
+                <button class="btn btn-primary m-1">Visualizza</button>
+                <button class="btn btn-primary m-1">Modifica</button>
+                <button class="btn btn-danger m-1">Cancella</button>
+            </div>
+
         </div>
 
     </div>
