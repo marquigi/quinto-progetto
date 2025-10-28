@@ -2,34 +2,50 @@
     @if (contactsList.length == 0) {
     <h2 class="text-center">Non ci sono contatti</h2>
     }@else {
-    @for (contatto of contactsList; track $index) {
     <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="card mb-3 card-fixed" style="border: 1px solid black;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="..." class="img-fluid rounded-start" alt="..." style="border: 1px solid black;">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ contatto.Nome }} {{ contatto.Cognome }}</h5>
+        @for (contatto of contactsList; track $index) {
+        <div class="col">
+            <div class="card mb-3 card-fixed h-100 m-1" style="border: 1px solid black;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="..." class="img-fluid rounded-start" alt="..." style="border: 1px solid black;">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ contatto.Nome }} {{ contatto.Cognome }}</h5>
 
-                        <p class="card-text"><small class="text-body-secondary">{{ contatto.Tipologia }} {{
-                                contatto.RagioneSociale }}</small></p>
-                        <p class="card-text"><small class="text-body-secondary">{{ contatto.Email }}</small></p>
-                        <p class="card-text"><small class="text-body-secondary">{{ contatto.Ntelefonico }}</small></p>
+                            <p class="card-text">
+                                <small class="text-body-secondary">
+                                    {{ contatto.Tipologia && contatto.RagioneSociale ? contatto.Tipologia + ' ' +
+                                    contatto.RagioneSociale : '-' }}
+                                </small>
+                            </p>
 
+                            <p class="card-text">
+                                <small class="text-body-secondary">
+                                    {{ contatto.Email ? contatto.Email : '-' }}
+                                </small>
+                            </p>
+
+                            <p class="card-text">
+                                <small class="text-body-secondary">
+                                    {{ contatto.Ntelefonico ? contatto.Ntelefonico : '-' }}
+                                </small>
+                            </p>
+
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="card-body">
-                <button class="btn btn-primary m-1">Visualizza</button>
-                <button class="btn btn-primary m-1">Modifica</button>
-                <button class="btn btn-danger m-1">Cancella</button>
-            </div>
+                <div class="card-body">
+                    <button class="btn btn-primary me-1">Visualizza</button>
+                    <button class="btn btn-primary me-1">Modifica</button>
+                    <button class="btn btn-danger">Cancella</button>
+                </div>
 
+            </div>
         </div>
-
+        }
     </div>
-    }}
+    }
 </div>
