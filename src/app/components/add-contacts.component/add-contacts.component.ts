@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Component, inject, OnInit } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { DataService } from '../../services/data-service';
 
 @Component({
   selector: 'app-add-contacts.component',
@@ -11,25 +12,37 @@ export class AddContactsComponent implements OnInit {
 
   addContactFrm!: FormGroup
 
+  dataService: DataService = inject(DataService)
+
   ngOnInit(): void {
     this.addContactFrm = new FormGroup({
-      Nome: new FormControl(''),
-      Cognome: new FormControl(''),
+      Nome: new FormControl('', [Validators.required, Validators.minLength(2), Validators.pattern(/^[A-Za-zÀ-ÖØ-öø-ÿ'\s]+$/)]),
+      Cognome: new FormControl('', [Validators.required, Validators.minLength(2), Validators.pattern(/^[A-Za-zÀ-ÖØ-öø-ÿ'\s]+$/)]),
       Tipologia: new FormControl(''),
       RagioneSociale: new FormControl(''),
       Indirizzo: new FormControl(''),
-      Ncivico: new FormControl(''),
-      CAP: new FormControl(''),
-      Citta: new FormControl(''),
-      Provincia: new FormControl(''),
+      Ncivico: new FormControl('', Validators.pattern(/^[0-9A-Za-z]+$/)),
+      CAP: new FormControl('', [Validators.pattern(/^[0-9]{5}$/)]),
+      Citta: new FormControl('', [Validators.minLength(2), Validators.pattern(/^[A-Za-zÀ-ÖØ-öø-ÿ'\s]+$/)]),
+      Provincia: new FormControl('', Validators.pattern(/^[A-Z]{2}$/)),
+      Email: new FormControl('', Validators.email),
       Nazione: new FormControl(''),
-      Ntelefonico: new FormControl(''),
-      PreInt: new FormControl('')
+      Ntelefonico: new FormControl('', Validators.pattern(/^[0-9]{6,15}$/)),
+      PreInt: new FormControl('', Validators.pattern(/^\+[0-9]{1,3}$/)),
+      Compleanno: new FormControl('', Validators.pattern(/^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/))
     });
   }
 
-  onSubmit() {
-    console.log(this.addContactFrm!.value)
-  }
+  salvaContatto() {
 
+    console.log(this.addContactFrm!.value)
+
+    if (this.addContactFrm.invalid) {
+      this.addContactFrm.markAsTouched();
+    } else {
+      this.dataService.salva(this.addContactFrm!.value);
+      this.addContactFrm.reset();
+    }
+
+  }
 }

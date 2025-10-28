@@ -1,3 +1,26 @@
 <div class="container mt-5">
     <h2 class="text-center">Contatti</h2>
+
+    <!-- Aggiungere un @if se non ci sono contatti mostrare un messaggio se no mostra la tabella di contatti -->
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        @for (contatto of contactsList; track $index) {
+        <div class="col">
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ contatto.Nome }} {{ contatto.Cognome }}</h5>
+                    <p class="card-text">{{ contatto.Tipologia }} / {{ contatto.RagioneSociale }}</p>
+                    <p class="card-text">{{ contatto.Email }}</p>
+                    <button type="button" class="btn btn-primary me-2">Visualizza</button>
+                    <button type="button" class="btn btn-primary me-2">Modifica</button>
+                    <button type="button" class="btn btn-danger me">Cancella</button>
+                </div>
+            </div>
+        </div>
+        }
+
+    </div>
+
 </div>

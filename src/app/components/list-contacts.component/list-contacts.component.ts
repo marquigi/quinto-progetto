@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { DataService } from '../../services/data-service';
 
 @Component({
   selector: 'app-list-contacts.component',
@@ -8,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class ListContactsComponent {
 
+  dataService: DataService = inject(DataService)
+
+  contactsList = this.dataService.saveContacts;
 }
