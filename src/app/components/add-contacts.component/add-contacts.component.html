@@ -11,7 +11,14 @@
                         id="Nome"
                         [class.is-invalid]="addContactFrm.get('Nome')?.invalid && addContactFrm.get('Nome')?.touched">
                     @if(addContactFrm.get('Nome')?.invalid && addContactFrm.get('Nome')?.touched){
-                    <div class="text-danger">Campo obbligatorio</div>
+                    <div class="text-danger">
+                        <i class="bi bi-exclamation-octagon-fill"></i> Campo obbligatorio o NON valido
+                    </div>
+                    }
+                    @if(addContactFrm.get('Nome')?.valid && addContactFrm.get('Nome')?.dirty){
+                    <div class="text-success">
+                        <i class="bi bi-check-circle-fill"></i> Campo valido
+                    </div>
                     }
                 </div>
                 <div class="col">
@@ -20,7 +27,13 @@
                         formControlName="Cognome" id="Cognome"
                         [class.is-invalid]="addContactFrm.get('Cognome')?.invalid && addContactFrm.get('Cognome')?.touched">
                     @if(addContactFrm.get('Cognome')?.invalid && addContactFrm.get('Cognome')?.touched){
-                    <div class="text-danger">Campo obbligatorio</div>
+                    <div class="text-danger"><i class="bi bi-exclamation-octagon-fill"></i> Campo obbligatorio o NON
+                        valido</div>
+                    }
+                    @if(addContactFrm.get('Cognome')?.valid && addContactFrm.get('Cognome')?.dirty){
+                    <div class="text-success">
+                        <i class="bi bi-check-circle-fill"></i> Campo valido
+                    </div>
                     }
                 </div>
             </div>
@@ -75,7 +88,7 @@
                         [class.is-invalid]="addContactFrm.get('CAP')?.invalid && addContactFrm.get('CAP')?.touched">
                 </div>
 
-                <div class="col-sm-2">
+                <div class="col-sm-1">
                     <label for="Provincia" class="form-label">Provincia</label>
                     <input type="text" class="form-control" placeholder="Provincia" aria-label="Provincia"
                         formControlName="Provincia" id="Provincia"
@@ -96,7 +109,13 @@
                         formControlName="Email" id="Email"
                         [class.is-invalid]="addContactFrm.get('Email')?.invalid && addContactFrm.get('Email')?.touched">
                     @if(addContactFrm.get('Email')?.invalid && addContactFrm.get('Email')?.touched){
-                    <div class="text-danger">Campo obbligatorio o NON valido</div>
+                    <div class="text-danger"><i class="bi bi-exclamation-octagon-fill"></i> Campo obbligatorio o NON
+                        valido</div>
+                    }
+                    @if(addContactFrm.get('Email')?.valid && addContactFrm.get('Email')?.dirty){
+                    <div class="text-success">
+                        <i class="bi bi-check-circle-fill"></i> Campo valido
+                    </div>
                     }
                 </div>
                 <div class="col-sm-1">
@@ -111,12 +130,18 @@
                         aria-label="Numero telefonico" formControlName="Ntelefonico" id="Ntelefonico"
                         [class.is-invalid]="addContactFrm.get('Ntelefonico')?.invalid && addContactFrm.get('Ntelefonico')?.touched">
                     @if(addContactFrm.get('Ntelefonico')?.invalid && addContactFrm.get('Ntelefonico')?.touched){
-                    <div class="text-danger">Campo obbligatorio o NON valido</div>
+                    <div class="text-danger"><i class="bi bi-exclamation-octagon-fill"></i> Campo obbligatorio o NON
+                        valido</div>
+                    }
+                    @if(addContactFrm.get('Ntelefonico')?.valid && addContactFrm.get('Ntelefonico')?.dirty){
+                    <div class="text-success">
+                        <i class="bi bi-check-circle-fill"></i> Campo valido
+                    </div>
                     }
                 </div>
                 <div class="col-sm-3">
                     <label for="Compleanno" class="form-label">Data di nascita</label>
-                    <input type="text" class="form-control" placeholder="es. GG/MM/AAAA" aria-label="Compleanno"
+                    <input type="date" class="form-control" placeholder="es. GG/MM/AAAA" aria-label="Compleanno"
                         formControlName="Compleanno" id="Compleanno"
                         [class.is-invalid]="addContactFrm.get('Compleanno')?.invalid && addContactFrm.get('Compleanno')?.touched">
                 </div>

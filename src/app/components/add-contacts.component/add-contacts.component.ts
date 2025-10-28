@@ -29,7 +29,7 @@ export class AddContactsComponent implements OnInit {
       Nazione: new FormControl(''),
       Ntelefonico: new FormControl('', [Validators.required, Validators.pattern(/^[0-9]{6,15}$/)]),
       PreInt: new FormControl('', Validators.pattern(/^\+[0-9]{1,3}$/)),
-      Compleanno: new FormControl('', Validators.pattern(/^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/))
+      Compleanno: new FormControl('')
     });
 
 
