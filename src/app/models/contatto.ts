@@ -13,5 +13,5 @@ export type DataContacts = {
     Email: string;
     Ntelefonico: number;
     PreInt: number;
-    Compleanno: number;
+    Compleanno: string;
 }
