@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { DataService } from '../../services/data-service';
+import { RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-list-contacts.component',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './list-contacts.component.html',
   styleUrl: './list-contacts.component.css',
 })

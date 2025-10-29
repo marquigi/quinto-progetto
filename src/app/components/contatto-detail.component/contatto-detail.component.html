@@ -1,10 +1,12 @@
-<div class="card">
+<div class="card m-5">
+    @if(cDetail){
     <div class="card-header">
-        Featured
+        {{ cDetail.Nome }} {{ cDetail.Cognome }}
     </div>
     <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <h5 class="card-title">{{ cDetail.Ntelefono }}</h5>
+        <p class="card-text"></p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
+    }
 </div>

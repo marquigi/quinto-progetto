@@ -1,4 +1,3 @@
-
 export type DataContacts = {
     id: number
     Nome: string;
