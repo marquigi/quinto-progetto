@@ -15,7 +15,7 @@
                         <i class="bi bi-exclamation-octagon-fill"></i> Campo obbligatorio o NON valido
                     </div>
                     }
-                    @if(addContactFrm.get('Nome')?.valid && addContactFrm.get('Nome')?.dirty){
+                    @if(addContactFrm.get('Nome')?.valid && addContactFrm.get('Nome')?.touched){
                     <div class="text-success">
                         <i class="bi bi-check-circle-fill"></i> Campo valido
                     </div>
@@ -30,7 +30,7 @@
                     <div class="text-danger"><i class="bi bi-exclamation-octagon-fill"></i> Campo obbligatorio o NON
                         valido</div>
                     }
-                    @if(addContactFrm.get('Cognome')?.valid && addContactFrm.get('Cognome')?.dirty){
+                    @if(addContactFrm.get('Cognome')?.valid && addContactFrm.get('Cognome')?.touched){
                     <div class="text-success">
                         <i class="bi bi-check-circle-fill"></i> Campo valido
                     </div>
@@ -44,7 +44,7 @@
                 <div class="col">
                     <label for="Tipologia" class="form-label">Tipologia</label>
                     <select class="form-select" aria-label="Tipologia" id="Tipologia" formControlName="Tipologia">
-                        <option selected>Seleziona tipologia</option>
+                        <option value="" selected>Seleziona tipologia</option>
                         <option value="Privato">Privato</option>
                         <option value="Azienda">Azienda</option>
                     </select>
@@ -112,7 +112,7 @@
                     <div class="text-danger"><i class="bi bi-exclamation-octagon-fill"></i> Campo obbligatorio o NON
                         valido</div>
                     }
-                    @if(addContactFrm.get('Email')?.valid && addContactFrm.get('Email')?.dirty){
+                    @if(addContactFrm.get('Email')?.valid && addContactFrm.get('Email')?.touched){
                     <div class="text-success">
                         <i class="bi bi-check-circle-fill"></i> Campo valido
                     </div>
@@ -133,7 +133,7 @@
                     <div class="text-danger"><i class="bi bi-exclamation-octagon-fill"></i> Campo obbligatorio o NON
                         valido</div>
                     }
-                    @if(addContactFrm.get('Ntelefonico')?.valid && addContactFrm.get('Ntelefonico')?.dirty){
+                    @if(addContactFrm.get('Ntelefonico')?.valid && addContactFrm.get('Ntelefonico')?.touched){
                     <div class="text-success">
                         <i class="bi bi-check-circle-fill"></i> Campo valido
                     </div>
