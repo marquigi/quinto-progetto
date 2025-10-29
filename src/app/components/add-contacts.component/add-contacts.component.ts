@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { DataService } from '../../services/data-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-contacts.component',
@@ -13,6 +14,8 @@ export class AddContactsComponent implements OnInit {
   addContactFrm!: FormGroup
 
   dataService: DataService = inject(DataService)
+
+  private router = inject(Router);
 
   ngOnInit(): void {
     this.addContactFrm = new FormGroup({
@@ -55,6 +58,7 @@ export class AddContactsComponent implements OnInit {
     } else {
       this.dataService.salva(this.addContactFrm!.value);
       this.addContactFrm.reset();
+      this.router.navigate(['/']);
     }
 
   }
