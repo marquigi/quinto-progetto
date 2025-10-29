@@ -1,11 +1,11 @@
 <div class="container text-center">
   <h1>Rubrica</h1>
-  <button class="btn btn-outline-primary me-2" routerLink="/addContact" routerLinkActive="active"><i
-      class="bi bi-person-plus-fill"></i>
-    Aggiungi
-    Contatto</button>
   <button class="btn btn-outline-success" routerLink="/" routerLinkActive="active"
     [routerLinkActiveOptions]="{ exact: true }"><i class="bi bi-person-lines-fill"></i>
     Contatti</button>
   <router-outlet />
+  <button class="btn btn-outline-primary me-2" routerLink="/addContact" routerLinkActive="active"><i
+      class="bi bi-person-plus-fill"></i>
+    Aggiungi
+    Contatto</button>
 </div>
