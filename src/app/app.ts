@@ -7,7 +7,8 @@ import { RouterModule, RouterOutlet } from '@angular/router';
   imports:
     [RouterOutlet,
       RouterModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+
     ],
   templateUrl: './app.html',
   styleUrl: './app.css'

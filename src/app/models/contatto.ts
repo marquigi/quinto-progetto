@@ -1,4 +1,6 @@
+
 export type DataContacts = {
+    id: number
     Nome: string;
     Cognome: string;
     Tipologia: string;
