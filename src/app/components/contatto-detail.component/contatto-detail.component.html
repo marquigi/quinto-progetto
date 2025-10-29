@@ -1,12 +1,18 @@
 <div class="card m-5">
     @if(cDetail){
     <div class="card-header">
-        {{ cDetail.Nome }} {{ cDetail.Cognome }}
+        <h4>{{ cDetail.Nome }} {{ cDetail.Cognome }}</h4>
     </div>
     <div class="card-body">
-        <h5 class="card-title">{{ cDetail.Ntelefono }}</h5>
-        <p class="card-text"></p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">{{ cDetail.Tipologia }} {{ cDetail.RagioneSociale }}</h5>
+        <p class="card-text">E-mail: {{ cDetail.Email }}</p>
+        <p class="card-text">Numero di telefono: {{ cDetail.PreInt }} {{ cDetail.Ntelefonico }}</p>
+        <p class="card-text">Indirizzo: {{ cDetail.Indirizzo }} {{ cDetail.Ncivico }} {{ cDetail.CAP }} {{ cDetail.Citta
+            }} {{
+            cDetail.Provincia }} {{
+            cDetail.Nazione }}</p>
+        <p class="card-text">Data di nascita: {{ cDetail.Compleanno }}</p>
+        <button type="button" class="btn btn-primary">Modifica</button>
     </div>
     }
 </div>
