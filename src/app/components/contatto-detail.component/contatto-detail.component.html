@@ -12,7 +12,9 @@
             cDetail.Provincia }} {{
             cDetail.Nazione }}</p>
         <p class="card-text">Data di nascita: {{ cDetail.Compleanno }}</p>
-        <button type="button" class="btn btn-primary">Modifica</button>
+        <button type="button" class="btn btn-primary" [routerLink]="['/contatti', cDetail.id, 'edit']">
+            Modifica
+        </button>
     </div>
     }
 </div>

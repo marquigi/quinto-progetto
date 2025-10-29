@@ -31,13 +31,11 @@
                         </small>
                     </p>
 
-                </div>
 
-                <div class="card-body">
                     <button class="btn btn-primary me-1" [routerLink]="['/contatti', contatto.id]">Visualizza</button>
                     <button class="btn btn-primary me-1"
                         [routerLink]="['/contatti', contatto.id, 'edit']">Modifica</button>
-                    <button class="btn btn-danger">Cancella</button>
+                    <button class="btn btn-danger" (click)="cancellaContato(contatto.id)">Cancella</button>
                 </div>
 
             </div>

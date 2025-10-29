@@ -23,4 +23,14 @@ export class DataService {
     return this.saveContacts.find(c => c.id === id);
   }
 
+  cancella(id: number) {
+    this.saveContacts = this.saveContacts.filter(c => c.id !== id);
+  }
+
+  aggiornaContatto(id: number, updatedData: DataContacts) {
+    const index = this.saveContacts.findIndex(c => c.id === id);
+    if (index !== -1) {
+      this.saveContacts[index] = { ...this.saveContacts[index], ...updatedData };
+    }
+  }
 }

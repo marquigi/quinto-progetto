@@ -1,1 +1,150 @@
-<p>edit.component works!</p>
+<div class="container mt-5">
+    <h2 class="text-center">Modifica</h2>
+    <form class="mt-5" [formGroup]="addContactFrm">
+        <div class="row card outline-bg-secondary mb-3" style="border: 1px solid black;">
+
+            <!-- NOME E COGNOME -->
+            <div class="row g-3">
+                <div class="col">
+                    <label for="Nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" aria-label="Nome" formControlName="Nome" id="Nome"
+                        [class.is-invalid]="addContactFrm.get('Nome')?.invalid && addContactFrm.get('Nome')?.touched">
+                    @if(addContactFrm.get('Nome')?.invalid && addContactFrm.get('Nome')?.touched){
+                    <div class="text-danger">
+                        <i class="bi bi-exclamation-octagon-fill"></i> Campo obbligatorio o NON valido
+                    </div>
+                    }
+                    @if(addContactFrm.get('Nome')?.valid && addContactFrm.get('Nome')?.touched){
+                    <div class="text-success">
+                        <i class="bi bi-check-circle-fill"></i> Campo valido
+                    </div>
+                    }
+                </div>
+                <div class="col">
+                    <label for="Cognome" class="form-label">Cognome</label>
+                    <input type="text" class="form-control" aria-label="Cognome" formControlName="Cognome" id="Cognome"
+                        [class.is-invalid]="addContactFrm.get('Cognome')?.invalid && addContactFrm.get('Cognome')?.touched">
+                    @if(addContactFrm.get('Cognome')?.invalid && addContactFrm.get('Cognome')?.touched){
+                    <div class="text-danger">
+                        <i class="bi bi-exclamation-octagon-fill"></i> Campo obbligatorio o NON valido
+                    </div>
+                    }
+                    @if(addContactFrm.get('Cognome')?.valid && addContactFrm.get('Cognome')?.touched){
+                    <div class="text-success">
+                        <i class="bi bi-check-circle-fill"></i> Campo valido
+                    </div>
+                    }
+                </div>
+            </div>
+
+            <!-- TIPOLOGIA E RAGIONE SOCIALE -->
+            <div class="row g-3">
+                <div class="col">
+                    <label for="Tipologia" class="form-label">Tipologia</label>
+                    <select class="form-select" aria-label="Tipologia" id="Tipologia" formControlName="Tipologia">
+                        <option value="" selected>Seleziona tipologia</option>
+                        <option value="Privato">Privato</option>
+                        <option value="Azienda">Azienda</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="RagioneSociale" class="form-label">Ragione sociale</label>
+                    <input type="text" class="form-control" aria-label="Ragione sociale"
+                        formControlName="RagioneSociale">
+                </div>
+            </div>
+
+            <!-- INDIRIZZO PROVINCIA CITTA NAZIONE -->
+            <div class="row g-3">
+                <div class="col-sm-7">
+                    <label for="Indirizzo" class="form-label">Indirizzo</label>
+                    <input type="text" class="form-control" aria-label="Via" formControlName="Indirizzo" id="Indirizzo">
+                </div>
+                <div class="col-sm">
+                    <label for="Citta" class="form-label">Città</label>
+                    <input type="text" class="form-control" aria-label="Città" formControlName="Citta" id="Citta"
+                        [class.is-invalid]="addContactFrm.get('Citta')?.invalid && addContactFrm.get('Citta')?.touched">
+                </div>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-sm-1">
+                    <label for="Ncivico" class="form-label">N° civico</label>
+                    <input type="text" class="form-control" aria-label="N° civico" formControlName="Ncivico"
+                        id="Ncivico"
+                        [class.is-invalid]="addContactFrm.get('Ncivico')?.invalid && addContactFrm.get('Ncivico')?.touched">
+                </div>
+                <div class="col-sm-1">
+                    <label for="CAP" class="form-label">CAP</label>
+                    <input type="text" class="form-control" aria-label="CAP" formControlName="CAP" id="CAP"
+                        [class.is-invalid]="addContactFrm.get('CAP')?.invalid && addContactFrm.get('CAP')?.touched">
+                </div>
+                <div class="col-sm-1">
+                    <label for="Provincia" class="form-label">Provincia</label>
+                    <input type="text" class="form-control" aria-label="Provincia" formControlName="Provincia"
+                        id="Provincia"
+                        [class.is-invalid]="addContactFrm.get('Provincia')?.invalid && addContactFrm.get('Provincia')?.touched">
+                </div>
+                <div class="col-sm">
+                    <label for="Nazione" class="form-label">Nazione</label>
+                    <input type="text" class="form-control" aria-label="Nazione" formControlName="Nazione" id="Nazione">
+                </div>
+            </div>
+
+            <!-- Email, Prefisso e Numero telefonico -->
+            <div class="row g-3">
+                <div class="col-sm">
+                    <label for="Email" class="form-label">Indirizzo e-mail</label>
+                    <input type="text" class="form-control" aria-label="Email" formControlName="Email" id="Email"
+                        [class.is-invalid]="addContactFrm.get('Email')?.invalid && addContactFrm.get('Email')?.touched">
+                    @if(addContactFrm.get('Email')?.invalid && addContactFrm.get('Email')?.touched){
+                    <div class="text-danger">
+                        <i class="bi bi-exclamation-octagon-fill"></i> Campo obbligatorio o NON valido
+                    </div>
+                    }
+                    @if(addContactFrm.get('Email')?.valid && addContactFrm.get('Email')?.touched){
+                    <div class="text-success">
+                        <i class="bi bi-check-circle-fill"></i> Campo valido
+                    </div>
+                    }
+                </div>
+                <div class="col-sm-1">
+                    <label for="PreInt" class="form-label">Prefisso</label>
+                    <input type="text" class="form-control" aria-label="Prefisso internazionale"
+                        formControlName="PreInt" id="PreInt"
+                        [class.is-invalid]="addContactFrm.get('PreInt')?.invalid && addContactFrm.get('PreInt')?.touched">
+                </div>
+                <div class="col-sm">
+                    <label for="Ntelefonico" class="form-label">Numero telefonico</label>
+                    <input type="text" class="form-control" aria-label="Numero telefonico" formControlName="Ntelefonico"
+                        id="Ntelefonico"
+                        [class.is-invalid]="addContactFrm.get('Ntelefonico')?.invalid && addContactFrm.get('Ntelefonico')?.touched">
+                    @if(addContactFrm.get('Ntelefonico')?.invalid && addContactFrm.get('Ntelefonico')?.touched){
+                    <div class="text-danger">
+                        <i class="bi bi-exclamation-octagon-fill"></i> Campo obbligatorio o NON valido
+                    </div>
+                    }
+                    @if(addContactFrm.get('Ntelefonico')?.valid && addContactFrm.get('Ntelefonico')?.touched){
+                    <div class="text-success">
+                        <i class="bi bi-check-circle-fill"></i> Campo valido
+                    </div>
+                    }
+                </div>
+                <div class="col-sm-3">
+                    <label for="Compleanno" class="form-label">Data di nascita</label>
+                    <input type="date" class="form-control" aria-label="Compleanno" formControlName="Compleanno"
+                        id="Compleanno"
+                        [class.is-invalid]="addContactFrm.get('Compleanno')?.invalid && addContactFrm.get('Compleanno')?.touched">
+                </div>
+            </div>
+
+            <!-- BOTTONE CONFERMA -->
+            <div class="col-12 text-center m-3">
+                <button type="submit" class="btn btn-primary" (click)="salvaContatto()"
+                    [disabled]="addContactFrm.invalid">
+                    CONFERMA
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

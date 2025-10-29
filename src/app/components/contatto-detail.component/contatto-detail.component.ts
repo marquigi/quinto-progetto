@@ -1,10 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { DataService } from '../../services/data-service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-contatto-detail.component',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './contatto-detail.component.html',
   styleUrl: './contatto-detail.component.css',
 })

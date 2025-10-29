@@ -8,11 +8,11 @@ import { RouterModule, RouterOutlet } from '@angular/router';
     [RouterOutlet,
       RouterModule,
       ReactiveFormsModule,
-
     ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   protected readonly title = signal('quinto-progetto');
+
 }

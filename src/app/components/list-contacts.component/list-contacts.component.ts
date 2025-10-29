@@ -13,9 +13,14 @@ export class ListContactsComponent {
 
   dataService: DataService = inject(DataService)
 
-  contactsList = this.dataService.saveContacts;
+  contactsList: any[] = []
 
   ngOnInit() {
+    this.contactsList = this.dataService.getContacts();
+  }
+
+  cancellaContato(id: number) {
+    this.dataService.cancella(id);
     this.contactsList = this.dataService.getContacts();
   }
 }
