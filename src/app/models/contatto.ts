@@ -5,13 +5,13 @@ export type DataContacts = {
     Tipologia: string;
     RagioneSociale: string;
     Indirizzo: string;
-    Ncivico: number;
-    CAP: number;
+    Ncivico: string;
+    CAP: string;
     Citta: string;
     Provincia: string;
     Nazione: string;
     Email: string;
-    Ntelefonico: number;
-    PreInt: number;
+    Ntelefonico: string;
+    PreInt: string;
     Compleanno: string;
 }

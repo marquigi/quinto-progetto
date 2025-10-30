@@ -7,8 +7,21 @@ import { DataContacts } from '../models/contatto';
 export class DataService {
 
   private addId = 0;
+  private memo = 'contacts';
 
-  saveContacts: DataContacts[] = []
+  saveContacts: DataContacts[] = [];
+
+  constructor() {
+    const memoContatti = localStorage.getItem(this.memo);
+    if (memoContatti) {
+      this.saveContacts = JSON.parse(memoContatti);
+      this.addId = this.saveContacts.length ? Math.max(...this.saveContacts.map(c => c.id)) : 0;
+    }
+  }
+
+  private salvaInMemo() {
+    localStorage.setItem(this.memo, JSON.stringify(this.saveContacts));
+  }
 
   getContacts() {
     return this.saveContacts;
@@ -17,6 +30,7 @@ export class DataService {
   salva(contatto: DataContacts) {
     contatto.id = ++this.addId;
     this.saveContacts.push(contatto);
+    this.salvaInMemo();
   }
 
   getById(id: number) {
@@ -25,12 +39,14 @@ export class DataService {
 
   cancella(id: number) {
     this.saveContacts = this.saveContacts.filter(c => c.id !== id);
+    this.salvaInMemo();
   }
 
   aggiornaContatto(id: number, updatedData: DataContacts) {
     const index = this.saveContacts.findIndex(c => c.id === id);
     if (index !== -1) {
-      this.saveContacts[index] = { ...this.saveContacts[index], ...updatedData };
+      this.saveContacts[index] = { ...this.saveContacts[index], ...updatedData, id };
+      this.salvaInMemo();
     }
   }
 }
