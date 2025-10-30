@@ -54,7 +54,7 @@ export class AddContactsComponent implements OnInit {
     console.log(this.addContactFrm!.value)
 
     if (this.addContactFrm.invalid) {
-      this.addContactFrm.markAsTouched();
+      this.addContactFrm.markAllAsTouched();
     } else {
       this.dataService.salva(this.addContactFrm!.value);
       this.addContactFrm.reset();

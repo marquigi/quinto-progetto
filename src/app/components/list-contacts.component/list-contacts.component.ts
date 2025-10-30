@@ -19,7 +19,7 @@ export class ListContactsComponent {
     this.contactsList = this.dataService.getContacts();
   }
 
-  cancellaContato(id: number) {
+  cancellaConttato(id: number) {
     this.dataService.cancella(id);
     this.contactsList = this.dataService.getContacts();
   }
