@@ -24,7 +24,7 @@ export class AddContactsComponent implements OnInit {
       Tipologia: new FormControl(''),
       RagioneSociale: new FormControl(''),
       Indirizzo: new FormControl(''),
-      Ncivico: new FormControl('', Validators.pattern(/^[0-9A-Za-z]+$/)),
+      Ncivico: new FormControl('', Validators.pattern(/^[0-9]+[A-Za-z\/-]{0,3}$/)),
       CAP: new FormControl('', [Validators.pattern(/^[0-9]{5}$/)]),
       Citta: new FormControl('', [Validators.minLength(2), Validators.pattern(/^[A-Za-zÀ-ÖØ-öø-ÿ'\s]+$/)]),
       Provincia: new FormControl('', Validators.pattern(/^[A-Z]{2}$/)),
